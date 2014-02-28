@@ -1,6 +1,6 @@
 {
   "name": "php-twig",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Twig syntax highlighting for atom",
   "repository": "https://github.com/reesef/php-twig",
@@ -8,6 +8,5 @@
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
