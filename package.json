@@ -1,9 +1,9 @@
 {
-  "name": "p-h-p-twig",
+  "name": "php-twig",
   "version": "0.0.0",
   "private": true,
-  "description": "A short description of your package",
-  "repository": "https://github.com/atom/p-h-p-twig",
+  "description": "Twig syntax highlighting for atom",
+  "repository": "https://github.com/reesef/php-twig",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
