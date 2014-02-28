@@ -1,3 +1,7 @@
-# p-h-p-twig package
+# PHP-twig for atom
 
-A short description of your package.
+.twig syntax highlighting for atom.
+
+Converted from [PHP-twig for textmate & sublimetext](https://github.com/Anomareh/PHP-Twig.tmbundle).
+
+## Installation
