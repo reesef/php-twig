@@ -1,0 +1,55 @@
+'.text.html.twig':
+  'block (block)':
+    'prefix': 'blockb'
+    'body': '{% block ${1:name} %}\n    $0\n{% endblock %}'
+  'block':
+    'prefix': 'block'
+    'body': '{% block ${1:name} %}$0{% endblock %}'
+  'else':
+    'prefix': 'else'
+    'body': '{% else %}\n    $0'
+  'extends':
+    'prefix': 'extends'
+    'body': '{% extends \'${1:template}\' %}$0'
+  'filter (block)':
+    'prefix': 'filterb'
+    'body': '{% filter ${1:name} %}\n    $0\n{% endfilter %}'
+  'filter':
+    'prefix': 'filter'
+    'body': '{% filter ${1:name} %}$0{% endfilter %}'
+  'for ... else':
+    'prefix': 'fore'
+    'body': '{% for ${1:item} in ${2:seq} %}\n    $3\n{% else %}\n    $0\n{% endfor %}'
+  'for':
+    'prefix': 'for'
+    'body': '{% for ${1:item} in ${2:seq} %}\n    $0\n{% endfor %}'
+  'if (block)':
+    'prefix': 'ifb'
+    'body': '{% if ${1:condition} %}\n    $0\n{% endif %}'
+  'if ... else':
+    'prefix': 'ife'
+    'body': '{% if ${1:condition} %}\n    $2\n{% else %}\n    $0\n{% endif %}'
+  'if':
+    'prefix': 'if'
+    'body': '{% if ${1:condition} %}$0{% endif %}'
+  'include':
+    'prefix': 'inc'
+    'body': '{% include \'${1:template}\' ${2:with ${3:vars}${4: only}} %}$0'
+  'set (block)':
+    'prefix': 'setb'
+    'body': '{% set ${1:var} %}\n    $0\n{% endset %}'
+  'set':
+    'prefix': 'set'
+    'body': '{% set ${1:var} = ${2:value} %}$0'
+  '{% ... %} (block)':
+    'prefix': '%%b'
+    'body': '{% $1$2 %}\n    $0\n{% end$1 %}'
+  '{% ... %}':
+    'prefix': '%%'
+    'body': '{% $1$2 %}$0{% end$1 %}'
+  '{# ... #}':
+    'prefix': '##'
+    'body': '{# $1 #}$0'
+  '{{ ... }}':
+    'prefix': '}}'
+    'body': '{{ $1 }}$0'

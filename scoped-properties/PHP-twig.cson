@@ -1,0 +1,4 @@
+'.text.html.twig':
+  'editor':
+    'commentStart': '{# '
+    'commentEnd': ' #}'
