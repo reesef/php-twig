@@ -1,12 +1,12 @@
 {
-  "name": "php-twig",
+  "name": "jez-php-twig",
   "version": "0.2.1",
   "private": true,
   "description": "Twig syntax highlighting for atom",
-  "repository": "https://github.com/reesef/php-twig",
+  "repository": "https://github.com/jezhalford/php-twig",
   "license": "MIT",
   "engines": {
-    "atom": ">0.50.0"
+    "atom": ">0.10.0"
   },
   "dependencies": {}
 }
