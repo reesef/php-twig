@@ -2,7 +2,7 @@
   "name": "ener-php-twig",
   "version": "1.0.0",
   "private": true,
-  "description": "Twig syntax highlighting for atom",
+  "description": "Twig syntax highlighting. Several languages supported.",
   "repository": "https://github.com/ener-getick/php-twig",
   "license": "MIT",
   "engines": {
