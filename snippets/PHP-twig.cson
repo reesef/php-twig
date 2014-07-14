@@ -1,4 +1,4 @@
-'.text.html.twig':
+'.html.twig':
   'block (block)':
     'prefix': 'blockb'
     'body': '{% block ${1:name} %}\n    $0\n{% endblock %}'
