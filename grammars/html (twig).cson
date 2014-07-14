@@ -4,6 +4,7 @@
   'twig'
   'html.twig'
 ]
+
 'patterns': [
   {
     'include': 'source.twig'

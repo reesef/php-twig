@@ -2,8 +2,8 @@
 'scopeName': 'js.twig'
 'fileTypes': [
   'js.twig'
-  'htc.twig',
-  '_js.twig',
+  'htc.twig'
+  '_js.twig'
   'es6.twig'
 ]
 'patterns': [

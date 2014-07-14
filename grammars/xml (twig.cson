@@ -1,0 +1,31 @@
+'name': 'XML (Twig)'
+'scopeName': 'xml.twig'
+'fileTypes': [
+  'xml.twig'
+  'xsd.twig'
+  'tld.twig'
+  'jsp.twig'
+  'pt.twig'
+  'cpt.twig'
+  'dtml.twig'
+  'rss.twig'
+  'opml.twig'
+  'svg.twig'
+  'xib.twig'
+  'storyboard.twig'
+  'wsdl.twig'
+  'rdf.twig'
+  'ism.twig'
+  'xlf.twig'
+  'xliff.twig'
+  'wig.twig'
+]
+
+'patterns': [
+  {
+    'include': 'source.twig'
+  }
+  {
+    'include': 'source.js',
+  }
+]

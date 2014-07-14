@@ -1,0 +1,14 @@
+'name': 'JSON (Twig)'
+'scopeName': 'json.twig'
+'fileTypes': [
+  'json.twig'
+]
+
+'patterns': [
+  {
+    'include': 'source.twig'
+  }
+  {
+    'include': 'source.json',
+  }
+]

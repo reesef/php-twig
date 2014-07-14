@@ -1,0 +1,13 @@
+'name': 'PHP (Twig)'
+'scopeName': 'php.twig'
+'fileTypes': [
+  'php.twig'
+]
+'patterns': [
+  {
+    'include': 'source.twig'
+  }
+  {
+    'include': 'text.html.php'
+  }
+]

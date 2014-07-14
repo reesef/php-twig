@@ -1,0 +1,14 @@
+'name': 'CSS (Twig)'
+'scopeName': 'css.twig'
+'fileTypes': [
+  'css.twig'
+]
+
+'patterns': [
+  {
+    'include': 'source.twig'
+  }
+  {
+    'include': 'source.css',
+  }
+]
