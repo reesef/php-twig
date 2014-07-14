@@ -1,6 +1,6 @@
 {
   "name": "language-twig",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "description": "Twig syntax highlighting. Several languages supported.",
   "repository": "https://github.com/ener-getick/php-twig",
