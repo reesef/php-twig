@@ -1,5 +1,5 @@
 {
-  "name": "ener-php-twig",
+  "name": "language-twig",
   "version": "1.0.1",
   "private": true,
   "description": "Twig syntax highlighting. Several languages supported.",
