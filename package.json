@@ -1,6 +1,6 @@
 {
   "name": "ener-php-twig",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "private": true,
   "description": "Twig syntax highlighting for atom",
   "repository": "https://github.com/ener-getick/php-twig",
