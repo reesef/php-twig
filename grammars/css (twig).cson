@@ -1,5 +1,5 @@
 'name': 'CSS (Twig)'
-'scopeName': 'css.twig'
+'scopeName': 'source.css.twig'
 'fileTypes': [
   'css.twig'
 ]

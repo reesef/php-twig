@@ -1,5 +1,5 @@
 'name': 'HTML (Twig)'
-'scopeName': 'html.twig'
+'scopeName': 'source.html.twig'
 'fileTypes': [
   'twig'
   'html.twig'

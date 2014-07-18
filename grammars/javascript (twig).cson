@@ -1,5 +1,5 @@
 'name': 'Javascript (Twig)'
-'scopeName': 'js.twig'
+'scopeName': 'source.js.twig'
 'fileTypes': [
   'js.twig'
   'htc.twig'

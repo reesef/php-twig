@@ -1,5 +1,5 @@
 'name': 'PHP (Twig)'
-'scopeName': 'php.twig'
+'scopeName': 'source.php.twig'
 'fileTypes': [
   'php.twig'
 ]

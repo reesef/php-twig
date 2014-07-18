@@ -1,5 +1,5 @@
 'name': 'JSON (Twig)'
-'scopeName': 'json.twig'
+'scopeName': 'source.json.twig'
 'fileTypes': [
   'json.twig'
 ]

@@ -1,5 +1,5 @@
 'name': 'XML (Twig)'
-'scopeName': 'xml.twig'
+'scopeName': 'source.xml.twig'
 'fileTypes': [
   'xml.twig'
   'xsd.twig'
