@@ -1,6 +1,10 @@
 'name': 'Twig'
 'scopeName': 'source.twig'
 
+'fileTypes': [
+  'txt.twig'
+]
+
 'patterns': [
   {
     'include': '#twig-comment-tags'
