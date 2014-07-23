@@ -1,15 +1,16 @@
 'name': 'HTML (Twig)'
-'scopeName': 'source.html.twig'
+'scopeName': 'text.html.twig'
 'fileTypes': [
   'twig'
   'html.twig'
 ]
-
+"firstLineMatch": "<(?i:(!DOCTYPE\\s*)?html)"
 'patterns': [
   {
     'include': 'source.twig'
   }
   {
+    'scopeName': 'text.html'
     'include': 'text.html.basic'
   }
 ]
