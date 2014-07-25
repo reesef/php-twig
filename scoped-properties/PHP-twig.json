@@ -1,5 +1,5 @@
 {
-  ".source.css.twig, .text.html.twig, .source.js.twig, .source.json.twig, .text.html.php.twig, .source.twig, .text.xml.twig, .source.yaml.twig": {
+  ".twig": {
     "editor": {
       "commentStart": "{# ",
       "commentEnd": " #}",
@@ -7,7 +7,7 @@
       "decreaseIndentPattern": "(?x)\n\t(\\{%\\s*(elseif|end(?:if|else|autoescape|for|block))(?:\\s[^%\\}]*)?\\s*%\\})\n\t"
     }
   },
-  ".source.css.twig, .text.html.twig, .source.js.twig, .source.json.twig, .text.html.php.twig, .source.twig, .text.xml.twig, .source.yaml.twig .meta.tag.template.value.twig": {
+  ".twig .meta.tag.template.value.twig": {
     "editor": {
         "completions": [
             "if",
