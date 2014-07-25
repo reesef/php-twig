@@ -5,12 +5,761 @@
   'html.twig'
 ]
 "firstLineMatch": "<(?i:(!DOCTYPE\\s*)?html)"
+
+'injections':
+  'R: text.html.twig':
+    'patterns': [
+      {
+        'include': '#twig-comment-tags'
+      }
+      {
+        'include': '#twig-variable-tags'
+      }
+      {
+        'include': '#twig-expression-tags'
+      }
+    ]
+
 'patterns': [
-  {
-    'include': 'source.twig'
-  }
   {
     'scopeName': 'text.html'
     'include': 'text.html.basic'
   }
 ]
+
+
+'repository':
+  'twig-comment-tags':
+    'begin': '\\{#-?'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.begin.twig'
+    'end': '-?#\\}'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.comment.end.twig'
+    'name': 'comment.block.twig'
+
+  'twig-variable-tags':
+    'begin': '\\{\\{-?'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.section.tag.twig'
+    'end': '-?\\}\\}'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.section.tag.twig'
+    'name': 'meta.tag.template.value.twig'
+    'patterns': [
+      {
+        'include': '#twig-constants'
+      }
+      {
+        'include': '#twig-operators'
+      }
+      {
+        'include': '#twig-functions-warg'
+      }
+      {
+        'include': '#twig-functions'
+      }
+      {
+        'include': '#twig-macros'
+      }
+      {
+        'include': '#twig-objects'
+      }
+      {
+        'include': '#twig-properties'
+      }
+      {
+        'include': '#twig-filters-warg'
+      }
+      {
+        'include': '#twig-filters'
+      }
+      {
+        'include': '#twig-filters-warg-ud'
+      }
+      {
+        'include': '#twig-filters-ud'
+      }
+      {
+        'include': '#twig-strings'
+      }
+      {
+        'include': '#twig-arrays'
+      }
+      {
+        'include': '#twig-hashes'
+      }
+    ]
+
+  'twig-expression-tags':
+    'begin': '\\{\\%-?'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.section.tag.twig'
+    'end': '-?\\%\\}'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.section.tag.twig'
+    'name': 'meta.tag.template.value.twig'
+    'patterns': [
+      {
+        'include': '#twig-keywords'
+      }
+      {
+        'include': '#twig-constants'
+      }
+      {
+        'include': '#twig-operators'
+      }
+      {
+        'include': '#twig-functions-warg'
+      }
+      {
+        'include': '#twig-functions'
+      }
+      {
+        'include': '#twig-macros'
+      }
+      {
+        'include': '#twig-objects'
+      }
+      {
+        'include': '#twig-properties'
+      }
+      {
+        'include': '#twig-filters-warg'
+      }
+      {
+        'include': '#twig-filters'
+      }
+      {
+        'include': '#twig-filters-warg-ud'
+      }
+      {
+        'include': '#twig-filters-ud'
+      }
+      {
+        'include': '#twig-strings'
+      }
+      {
+        'include': '#twig-arrays'
+      }
+      {
+        'include': '#twig-hashes'
+      }
+    ]
+
+  # Patterns
+  'twig-constants':
+    'patterns': [
+      {
+        'name': 'constant.language.twig'
+        'match': '(?i)(?<=[\\s\\[\\(\\{:,])(?:true|false|null|none)(?=[\\s\\)\\]\\}\\,])'
+      }
+      {
+        'name': 'constant.numeric.twig'
+        'match': '(?<=[\\s\\[\\(\\{:,]|\\.\\.|\\*\\*)[0-9]+(?:\\.[0-9]+)?(?=[\\s\\)\\]\\}\\,]|\\.\\.|\\*\\*)'
+      }
+    ]
+
+  'twig-operators':
+    'patterns': [
+      {
+        'captures':
+          '1':
+            'name': 'keyword.operator.arithmetic.twig'
+        'match': '(?<=\\s)(\\+|-|\\*|/|%|//)(?=\\s)'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'keyword.operator.assignment.twig'
+        'match': '(?<=\\s)(=|~)(?=\\s)'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'keyword.operator.bitwise.twig'
+        'match': '(?<=\\s)(&|\\||\\^)(?=\\s)'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'keyword.operator.comparison.twig'
+        'match': '(?<=\\s)((?:!|=)=|<=?|>=?|i(?:s|n))(?=\\s)'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'keyword.operator.logical.twig'
+        'match': '(?<=\\s)(not|or|and|\\?|:)(?=\\s)'
+      }
+      {
+        'captures':
+          '0':
+            'name': 'keyword.operator.arithmetic.twig'
+        'match': '(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\'"])\\*\\*(?=[a-zA-Z0-9_\\x{7f}-\\x{ff}\'"])'
+      }
+      {
+        'captures':
+          '0':
+            'name': 'keyword.operator.other.twig'
+        'match': '(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\'"])\\.\\.(?=[a-zA-Z0-9_\\x{7f}-\\x{ff}\'"])'
+      }
+      {
+        'captures':
+          '0':
+            'name': 'keyword.operator.other.twig'
+        'match': '(?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\}\\)\'"])\\|(?=[a-zA-Z_\\x{7f}-\\x{ff}])'
+      }
+    ]
+
+  'twig-functions-warg':
+    'begin': '(?<=[\\s\\(\\[\\{:,])(attribute|block|constant|cycle|date|divisibleby|dump|parent|random|range|sameas|template_from_string)(\\()'
+    'beginCaptures':
+      '1':
+        'name': 'support.function.twig'
+      '2':
+        'name': 'punctuation.definition.parameters.begin.twig'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.parameters.end.twig'
+    'patterns': [
+      {
+        'include': '#twig-constants'
+      }
+      {
+        'include': '#twig-functions-warg'
+      }
+      {
+        'include': '#twig-functions'
+      }
+      {
+        'include': '#twig-macros'
+      }
+      {
+        'include': '#twig-objects'
+      }
+      {
+        'include': '#twig-properties'
+      }
+      {
+        'include': '#twig-filters-warg'
+      }
+      {
+        'include': '#twig-filters'
+      }
+      {
+        'include': '#twig-filters-warg-ud'
+      }
+      {
+        'include': '#twig-filters-ud'
+      }
+      {
+        'include': '#twig-strings'
+      }
+      {
+        'include': '#twig-arrays'
+      }
+    ]
+    'contentName': 'meta.function.arguments.twig'
+
+  'twig-properties':
+    'patterns': [
+      {
+        'captures':
+          '1':
+            'name': 'punctuation.separator.property.twig'
+          '2':
+            'name': 'variable.other.property.twig'
+        'match': '(?x)\n                        (?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])\n                        (\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n                        (?=[\\.\\s\\|\\[\\)\\]\\}:,])\n                    '
+      }
+      {
+        'begin': '(?x)\n                        (?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}])\n                        (\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)\n                        (\\()\n                    '
+        'beginCaptures':
+          '1':
+            'name': 'punctuation.separator.property.twig'
+          '2':
+            'name': 'variable.other.property.twig'
+          '3':
+            'name': 'punctuation.definition.parameters.begin.twig'
+        'end': '\\)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.parameters.end.twig'
+        'patterns': [
+          {
+            'include': '#twig-constants'
+          }
+          {
+            'include': '#twig-functions-warg'
+          }
+          {
+            'include': '#twig-functions'
+          }
+          {
+            'include': '#twig-macros'
+          }
+          {
+            'include': '#twig-objects'
+          }
+          {
+            'include': '#twig-properties'
+          }
+          {
+            'include': '#twig-filters-warg'
+          }
+          {
+            'include': '#twig-filters'
+          }
+          {
+            'include': '#twig-filters-warg-ud'
+          }
+          {
+            'include': '#twig-filters-ud'
+          }
+          {
+            'include': '#twig-strings'
+          }
+          {
+            'include': '#twig-arrays'
+          }
+        ]
+        'contentName': 'meta.function.arguments.twig'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'punctuation.section.array.begin.twig'
+          '2':
+            'name': 'variable.other.property.twig'
+          '3':
+            'name': 'punctuation.section.array.end.twig'
+          '4':
+            'name': 'punctuation.section.array.begin.twig'
+          '5':
+            'name': 'variable.other.property.twig'
+          '6':
+            'name': 'punctuation.section.array.end.twig'
+          '7':
+            'name': 'punctuation.section.array.begin.twig'
+          '8':
+            'name': 'variable.other.property.twig'
+          '9':
+            'name': 'punctuation.section.array.end.twig'
+        'match': '(?x)\n                        (?<=[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]])\n                        (?:\n                            (\\[)(\'[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*\')(\\])\n                            |(\\[)("[a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*")(\\])\n                            |(\\[)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\])\n                        )\n                    '
+      }
+    ]
+
+  'twig-strings':
+    'patterns': [
+      {
+        'begin': '(?:(?<!\\\\)|(?<=\\\\\\\\))\''
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.twig'
+        'end': '(?:(?<!\\\\)|(?<=\\\\\\\\))\''
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.twig'
+        'name': 'string.quoted.single.twig'
+      }
+      {
+        'begin': '(?:(?<!\\\\)|(?<=\\\\\\\\))"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.twig'
+        'end': '(?:(?<!\\\\)|(?<=\\\\\\\\))"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.twig'
+        'name': 'string.quoted.double.twig'
+      }
+    ]
+
+  'twig-arrays':
+    'begin': '(?<=[\\s\\(\\{\\[:,])\\['
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.section.array.begin.twig'
+    'end': '\\]'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.section.array.end.twig'
+    'patterns': [
+      {
+        'include': '#twig-arrays'
+      }
+      {
+        'include': '#twig-hashes'
+      }
+      {
+        'include': '#twig-constants'
+      }
+      {
+        'include': '#twig-strings'
+      }
+      {
+        'include': '#twig-functions-warg'
+      }
+      {
+        'include': '#twig-functions'
+      }
+      {
+        'include': '#twig-macros'
+      }
+      {
+        'include': '#twig-objects'
+      }
+      {
+        'include': '#twig-properties'
+      }
+      {
+        'include': '#twig-filters-warg'
+      }
+      {
+        'include': '#twig-filters'
+      }
+      {
+        'include': '#twig-filters-warg-ud'
+      }
+      {
+        'include': '#twig-filters-ud'
+      }
+      {
+        'match': ','
+        'name': 'punctuation.separator.object.twig'
+      }
+    ]
+    'name': 'meta.array.twig'
+
+  'twig-hashes':
+    'begin': '(?<=[\\s\\(\\{\\[:,])\\{'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.section.hash.begin.twig'
+    'end': '\\}'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.section.hash.end.twig'
+    'patterns': [
+      {
+        'include': '#twig-hashes'
+      }
+      {
+        'include': '#twig-arrays'
+      }
+      {
+        'include': '#twig-constants'
+      }
+      {
+        'include': '#twig-strings'
+      }
+      {
+        'include': '#twig-functions-warg'
+      }
+      {
+        'include': '#twig-functions'
+      }
+      {
+        'include': '#twig-macros'
+      }
+      {
+        'include': '#twig-objects'
+      }
+      {
+        'include': '#twig-properties'
+      }
+      {
+        'include': '#twig-filters-warg'
+      }
+      {
+        'include': '#twig-filters'
+      }
+      {
+        'include': '#twig-filters-warg-ud'
+      }
+      {
+        'include': '#twig-filters-ud'
+      }
+      {
+        'match': ':'
+        'name': 'punctuation.separator.key-value.twig'
+      }
+      {
+        'match': ','
+        'name': 'punctuation.separator.object.twig'
+      }
+    ]
+    'name': 'meta.hash.twig'
+
+  'twig-keywords':
+    'match': '(?<=\\s)((?:end)?(autoescape|block|embed|filter|for|if|macro|raw|sandbox|set|spaceless|trans|verbatim)|as|do|else|elseif|extends|flush|from|ignore missing|import|include|only|use|with)(?=\\s)'
+    'name': 'keyword.control.twig'
+  'twig-functions':
+    'captures':
+      '1':
+        'name': 'support.function.twig'
+    'match': '(?<=is\\s)(defined|empty|even|iterable|none|null|odd)'
+
+  'twig-macros':
+    'begin': '(?x)            (?<=[\\s\\(\\[\\{:,])            ([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)            (?:                (\\.)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)            )            (\\()'
+    'beginCaptures':
+      '1':
+        'name': 'meta.function-call.twig'
+      '2':
+        'name': 'punctuation.separator.property.twig'
+      '3':
+        'name': 'variable.other.property.twig'
+      '4':
+        'name': 'punctuation.definition.parameters.begin.twig'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.parameters.end.twig'
+    'patterns': [
+      {
+        'include': '#twig-constants'
+      }
+      {
+        'include': '#twig-functions-warg'
+      }
+      {
+        'include': '#twig-functions'
+      }
+      {
+        'include': '#twig-macros'
+      }
+      {
+        'include': '#twig-objects'
+      }
+      {
+        'include': '#twig-properties'
+      }
+      {
+        'include': '#twig-filters-warg'
+      }
+      {
+        'include': '#twig-filters'
+      }
+      {
+        'include': '#twig-filters-warg-ud'
+      }
+      {
+        'include': '#twig-filters-ud'
+      }
+      {
+        'include': '#twig-strings'
+      }
+      {
+        'include': '#twig-arrays'
+      }
+      {
+        'include': '#twig-hashes'
+      }
+    ]
+    'contentName': 'meta.function.arguments.twig'
+
+  'twig-objects':
+    'captures':
+      '1':
+        'name': 'variable.other.twig'
+    'match': '(?<=[\\s\\{\\[\\(:,])([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(?=[\\s\\}\\[\\]\\(\\)\\.\\|,:])'
+
+  'twig-filters-warg':
+    'begin': '(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\\'\\"]\\|)|\\{%\\sfilter\\s)(convert_encoding|date|date_modify|default|e|escape|format|join|merge|number_format|replace|slice|split|trim)(\\()'
+    'beginCaptures':
+      '1':
+        'name': 'support.function.twig'
+      '2':
+        'name': 'punctuation.definition.parameters.begin.twig'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.parameters.end.twig'
+    'patterns': [
+      {
+        'include': '#twig-constants'
+      }
+      {
+        'include': '#twig-functions-warg'
+      }
+      {
+        'include': '#twig-functions'
+      }
+      {
+        'include': '#twig-macros'
+      }
+      {
+        'include': '#twig-objects'
+      }
+      {
+        'include': '#twig-properties'
+      }
+      {
+        'include': '#twig-filters-warg'
+      }
+      {
+        'include': '#twig-filters'
+      }
+      {
+        'include': '#twig-filters-warg-ud'
+      }
+      {
+        'include': '#twig-filters-ud'
+      }
+      {
+        'include': '#twig-strings'
+      }
+      {
+        'include': '#twig-arrays'
+      }
+      {
+        'include': '#twig-hashes'
+      }
+    ]
+    'contentName': 'meta.function.arguments.twig'
+
+  'twig-filters':
+    'captures':
+      '1':
+        'name': 'support.function.twig'
+    'match': '(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\\'\\"]\\|)|\\{%\\sfilter\\s)(abs|capitalize|e(?:scape)?|join|(?:json|url)_encode|keys|length|lower|nl2br|number_format|raw|reverse|sort|striptags|title|trim|upper)(?=[\\s\\|\\]\\}\\):,]|\\.\\.|\\*\\*)'
+
+  'twig-filters-warg-ud':
+    'begin': '(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\\'\\"]\\|)|\\{%\\sfilter\\s)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)(\\()'
+    'beginCaptures':
+      '1':
+        'name': 'meta.function-call.other.twig'
+      '2':
+        'name': 'punctuation.definition.parameters.begin.twig'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.parameters.end.twig'
+    'patterns': [
+      {
+        'include': '#twig-constants'
+      }
+      {
+        'include': '#twig-functions-warg'
+      }
+      {
+        'include': '#twig-functions'
+      }
+      {
+        'include': '#twig-macros'
+      }
+      {
+        'include': '#twig-objects'
+      }
+      {
+        'include': '#twig-properties'
+      }
+      {
+        'include': '#twig-filters-warg'
+      }
+      {
+        'include': '#twig-filters'
+      }
+      {
+        'include': '#twig-filters-warg-ud'
+      }
+      {
+        'include': '#twig-filters-ud'
+      }
+      {
+        'include': '#twig-strings'
+      }
+      {
+        'include': '#twig-arrays'
+      }
+      {
+        'include': '#twig-hashes'
+      }
+    ]
+    'contentName': 'meta.function.arguments.twig'
+
+  'twig-filters-ud':
+    'captures':
+      '1':
+        'name': 'meta.function-call.other.twig'
+    'match': '(?<=(?:[a-zA-Z0-9_\\x{7f}-\\x{ff}\\]\\)\\\'\\"]\\|)|\\{%\\sfilter\\s)([a-zA-Z_\\x{7f}-\\x{ff}][a-zA-Z0-9_\\x{7f}-\\x{ff}]*)'
+
+  'tag-generic-attribute':
+    'match': '\\b([a-zA-Z\\-:]+)'
+    'name': 'entity.other.attribute-name.html'
+  'tag-id-attribute':
+    'begin': '\\b(id)\\b\\s*(=)'
+    'captures':
+      '1':
+        'name': 'entity.other.attribute-name.id.html'
+      '2':
+        'name': 'punctuation.separator.key-value.html'
+    'end': '(?<=\'|")'
+    'name': 'meta.attribute-with-value.id.html'
+    'patterns': [
+      {
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.html'
+        'contentName': 'meta.toc-list.id.html'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.html'
+        'name': 'string.quoted.double.html'
+        'patterns': [
+          {
+            'include': '#embedded-code'
+          }
+          {
+            'include': '#entities'
+          }
+        ]
+      }
+      {
+        'begin': '\''
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.html'
+        'contentName': 'meta.toc-list.id.html'
+        'end': '\''
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.html'
+        'name': 'string.quoted.single.html'
+        'patterns': [
+          {
+            'include': '#embedded-code'
+          }
+          {
+            'include': '#entities'
+          }
+        ]
+      }
+    ]
+  'tag-stuff':
+    'patterns': [
+      {
+        'include': '#tag-id-attribute'
+      }
+      {
+        'include': '#tag-generic-attribute'
+      }
+      {
+        'include': '#string-double-quoted'
+      }
+      {
+        'include': '#string-single-quoted'
+      }
+      {
+        'include': '#embedded-code'
+      }
+    ]
