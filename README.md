@@ -3,7 +3,6 @@
 Twig syntax highlighting for atom.
 
 Languages supported :
-* PHP
 * HTML
 * CSS
 * Javascript
