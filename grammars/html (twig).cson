@@ -30,22 +30,22 @@
 
 'repository':
   'twig-comment-tags':
-    'begin': '\\{#-?'
+    'begin': '{#'
     'beginCaptures':
       '0':
         'name': 'punctuation.definition.comment.begin.twig'
-    'end': '-?#\\}'
+    'end': '#}'
     'endCaptures':
       '0':
         'name': 'punctuation.definition.comment.end.twig'
     'name': 'comment.block.twig'
 
   'twig-variable-tags':
-    'begin': '\\{\\{-?'
+    'begin': '{(?:{|(?<={#))'
     'beginCaptures':
       '0':
         'name': 'punctuation.section.tag.twig'
-    'end': '-?\\}\\}'
+    'end': '}(?:}|(?=#}))'
     'endCaptures':
       '0':
         'name': 'punctuation.section.tag.twig'
@@ -96,11 +96,11 @@
     ]
 
   'twig-expression-tags':
-    'begin': '\\{\\%-?'
+    'begin': '(?:{|(?<={#))%'
     'beginCaptures':
       '0':
         'name': 'punctuation.section.tag.twig'
-    'end': '-?\\%\\}'
+    'end': '%(?:}|(?=#}))'
     'endCaptures':
       '0':
         'name': 'punctuation.section.tag.twig'
