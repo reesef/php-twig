@@ -1,6 +1,6 @@
 {
   "name": "language-twig",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "private": true,
   "description": "Twig support for Atom. Several languages supported.",
   "repository": "https://github.com/ener-getick/php-twig",
