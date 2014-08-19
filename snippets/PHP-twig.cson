@@ -5,6 +5,9 @@
   'block':
     'prefix': 'block'
     'body': '{% block ${1:name} %}$0{% endblock %}'
+  'autoescape':
+    'prefix': 'autoescape'
+    'body': '{% autoescape ${1} %}$0{% endautoescape %}'
   'else':
     'prefix': 'else'
     'body': '{% else %}\n    $0'
