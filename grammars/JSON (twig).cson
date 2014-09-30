@@ -1,13 +1,11 @@
-'name': 'HTML (Twig)'
-'scopeName': 'text.html.twig'
+'name': 'JSON (Twig)'
+'scopeName': 'source.json.twig'
 'fileTypes': [
-  'twig'
-  'html.twig'
+  'json.twig'
 ]
-"firstLineMatch": "<(?i:(!DOCTYPE\\s*)?html)"
 
 'injections':
-  'R: text.html.twig':
+  'R: source.json.twig':
     'patterns': [
       {
         'include': '#twig-comment-tags'
@@ -22,11 +20,9 @@
 
 'patterns': [
   {
-    'scopeName': 'text.html'
-    'include': 'text.html.basic'
+    'include': 'source.json',
   }
 ]
-
 
 'repository':
   'twig-comment-tags':

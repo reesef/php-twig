@@ -1,10 +1,13 @@
-'.text.html.twig':
+'.twig':
   'block (block)':
     'prefix': 'blockb'
     'body': '{% block ${1:name} %}\n    $0\n{% endblock %}'
   'block':
     'prefix': 'block'
     'body': '{% block ${1:name} %}$0{% endblock %}'
+  'autoescape':
+    'prefix': 'autoescape'
+    'body': '{% autoescape ${1} %}$0{% endautoescape %}'
   'else':
     'prefix': 'else'
     'body': '{% else %}\n    $0'

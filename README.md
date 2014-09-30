@@ -2,4 +2,11 @@
 
 Twig syntax highlighting for atom.
 
-Converted from [PHP-twig for textmate](https://github.com/Anomareh/PHP-Twig.tmbundle).
+Languages supported :
+* HTML
+* CSS
+* Javascript
+* JSON
+* XML
+
+This package is a fork of https://github.com/reesef/php-twig.

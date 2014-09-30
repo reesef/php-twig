@@ -1,0 +1,16 @@
+'name': 'Javascript (Twig)'
+'scopeName': 'source.js.twig'
+'fileTypes': [
+  'js.twig'
+  'htc.twig'
+  '_js.twig'
+  'es6.twig'
+]
+'patterns': [
+  {
+    'include': 'source.twig'
+  }
+  {
+    'include': 'source.js',
+  }
+]

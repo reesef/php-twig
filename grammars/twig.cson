@@ -1,32 +1,21 @@
-'name': 'HTML (Twig)'
-'scopeName': 'text.html.twig'
-'fileTypes': [
-  'twig'
-  'html.twig'
-]
-"firstLineMatch": "<(?i:(!DOCTYPE\\s*)?html)"
+'name': 'Twig'
+'scopeName': 'source.twig'
 
-'injections':
-  'R: text.html.twig':
-    'patterns': [
-      {
-        'include': '#twig-comment-tags'
-      }
-      {
-        'include': '#twig-variable-tags'
-      }
-      {
-        'include': '#twig-expression-tags'
-      }
-    ]
+'fileTypes': [
+  'txt.twig'
+]
 
 'patterns': [
   {
-    'scopeName': 'text.html'
-    'include': 'text.html.basic'
+    'include': '#twig-comment-tags'
+  }
+  {
+    'include': '#twig-variable-tags'
+  }
+  {
+    'include': '#twig-expression-tags'
   }
 ]
-
 
 'repository':
   'twig-comment-tags':

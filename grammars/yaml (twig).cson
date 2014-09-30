@@ -1,13 +1,12 @@
-'name': 'HTML (Twig)'
-'scopeName': 'text.html.twig'
+'name': 'YAML (Twig)'
+'scopeName': 'source.yaml.twig'
 'fileTypes': [
-  'twig'
-  'html.twig'
+  'yaml.twig'
+  'yml.twig'
 ]
-"firstLineMatch": "<(?i:(!DOCTYPE\\s*)?html)"
 
 'injections':
-  'R: text.html.twig':
+  'R: source.yaml.twig':
     'patterns': [
       {
         'include': '#twig-comment-tags'
@@ -22,8 +21,10 @@
 
 'patterns': [
   {
-    'scopeName': 'text.html'
-    'include': 'text.html.basic'
+    'include': 'source.twig'
+  }
+  {
+    'include': 'source.yaml',
   }
 ]
 

@@ -1,13 +1,11 @@
-'name': 'HTML (Twig)'
-'scopeName': 'text.html.twig'
+'name': 'CSS (Twig)'
+'scopeName': 'source.css.twig'
 'fileTypes': [
-  'twig'
-  'html.twig'
+  'css.twig'
 ]
-"firstLineMatch": "<(?i:(!DOCTYPE\\s*)?html)"
 
 'injections':
-  'R: text.html.twig':
+  'R: source.css.twig':
     'patterns': [
       {
         'include': '#twig-comment-tags'
@@ -22,11 +20,9 @@
 
 'patterns': [
   {
-    'scopeName': 'text.html'
-    'include': 'text.html.basic'
+    'include': 'source.css',
   }
 ]
-
 
 'repository':
   'twig-comment-tags':

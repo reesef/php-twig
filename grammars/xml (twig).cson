@@ -1,13 +1,28 @@
-'name': 'HTML (Twig)'
-'scopeName': 'text.html.twig'
+'name': 'XML (Twig)'
+'scopeName': 'text.xml.twig'
 'fileTypes': [
-  'twig'
-  'html.twig'
+  'xml.twig'
+  'xsd.twig'
+  'tld.twig'
+  'jsp.twig'
+  'pt.twig'
+  'cpt.twig'
+  'dtml.twig'
+  'rss.twig'
+  'opml.twig'
+  'svg.twig'
+  'xib.twig'
+  'storyboard.twig'
+  'wsdl.twig'
+  'rdf.twig'
+  'ism.twig'
+  'xlf.twig'
+  'xliff.twig'
+  'wig.twig'
 ]
-"firstLineMatch": "<(?i:(!DOCTYPE\\s*)?html)"
 
 'injections':
-  'R: text.html.twig':
+  'R: text.xml.twig':
     'patterns': [
       {
         'include': '#twig-comment-tags'
@@ -22,8 +37,7 @@
 
 'patterns': [
   {
-    'scopeName': 'text.html'
-    'include': 'text.html.basic'
+    'include': 'text.xml',
   }
 ]
 
