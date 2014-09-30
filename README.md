@@ -8,5 +8,5 @@ Languages supported :
 * Javascript
 * JSON
 * XML
-
-This package is a fork of https://github.com/reesef/php-twig.
+* 
+Originally converted from https://github.com/Anomareh/PHP-Twig.tmbundle
