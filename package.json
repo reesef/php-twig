@@ -1,6 +1,6 @@
 {
   "name": "php-twig",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
   "description": "Twig support for Atom.",
   "repository": "https://github.com/reesef/php-twig",
