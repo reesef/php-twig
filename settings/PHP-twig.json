@@ -26,6 +26,7 @@
             "endfor",
             "macro",
             "endmacro",
+            "dump",
             "raw",
             "endraw",
             "sandbox",
